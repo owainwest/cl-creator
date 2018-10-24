@@ -1,0 +1,83 @@
+\documentclass[10pt,stdletter,dateno,sigleft, margin=0cm]{newlfm} % Extra options: 'sigleft' for a left--aligned signature, 'stdletternofrom' to remove the from address, 'letterpaper' for US letter paper -- consult the newlfm class manual for more options
+
+\usepackage{charter} % Use the Charter font for the document text
+\usepackage{hyperref}
+\usepackage{graphicx}
+%\newsavebox{\Luiuc}\sbox{\Luiuc}{\parbox[b]{0.5in}{\vspace{0.5in}
+% \includegraphics[width=1.2\linewidth]{logo.png}}} % Company/institution logo at the top left of the page
+%}}
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\@zfancyhead}{\fancy@reset}{\f@nch@reset}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyorh}{\f@nch@orh}{}{}
+\makeatother
+\makeletterhead{Uiuc}{\Lheader{\usebox{\Luiuc}}}
+
+\newlfmP{sigsize=0pt} % Slightly decrease the height of the signature field
+\newlfmP{addrfromphone} % Print a phone number under the sender's address
+\newlfmP{addrfromemail} % Print an email address under the sender's address
+\PhrPhone{Phone} % Customize the "Telephone" text
+\PhrEmail{Email} % Customize the "E--mail" text
+\voffset = --0.35in
+
+%\namefrom{Owain West} % Name
+
+\addrfrom{
+\today % Date
+%3901 Locust Walk \ % Address
+%Philadelphia, PA 19104
+}
+\phonefrom{(647) 608-2578} % Phone number
+\emailfrom{owest@sas.upenn.edu} % Email address
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%   ADDRESSEE AND GREETING/CLOSING
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\greetto{Dear Hiring Officer,} % Greeting text
+%\closeline{Sincerely yours,} % Closing text
+
+\nameto{Hiring Officer} % Addressee of the letter above the to address
+
+\addrto{
+%Recruitment Officer \ % To address
+{COMPANY} \
+%123 Pleasant Lane \
+%City, State 12345
+}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\begin{newlfm}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%   LETTER CONTENT
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% I attended my first Hackathon at PennApps 2015, and have since traveled to across America and Canada to compete in over a dozen competitions. Recently, McHacks (McGill's) saw the creation of EmergAlert, an application for natural disaster responders which used NLP to categorize incoming distress messages by type, severity, and location so that a response could be mounted as eficiently as possible. In recognition of our project, my team and I were awarded ``Best EPIC Hack'', by the health company EPIC for the best use of the FHIR public health database. 
+
+I have worked these past two summers in Toronto Development Lab of the Innovation Department at the Royal Bank of Canada. The team's mandate is, broadly, to ``do innovation''. As you might expect, such a buzzword--y mandate facilitates creative freedom. In my term at the company the year prior to last, I used that freedom to work on a plethora of projects, including spearheading the effort to build banking products for voice assistants like Amazon Alexa and Google Home, writing internal APIs, creating a chatbot which automated the developer onboarding process, writing a Postman--like service which allowed REST requests to be fired sequentially and conditionally branch/use values based on the results of previous requests, creating a ML--based demographic predictor of death time and cause, and more. Last summer I picked up where I had left off, pushing NLP-based conversational and data insight projects, including pitching/building various named-entity-recognition, sentiment analysis, semantic analysis, visual data-parsing, and classification models for various projects and lines of business within the bank. To support those projects, I interviewed and advised on hiring or partnering with external software-development companies, as well as bringing on other engineers from the TDL to work together on those projects. I am proud to say that those efforts gained considerable traction and have spawned numerous ongoing projects and have caused (so far) one new provisional patent for RBC.
+
+In addition to working \emph{with} others, I like working \emph{for} others - I am a teaching assistant for introductory Logic and Computer Science courses at UPenn, and get great pleasure from seeing my students turn from disinterested observers into engaged learners. I recently coauthored a textbook for one of those classes, which can be found \href{https://www.cis.upenn.edu/~weinstei/PQT.pdf}{\textbf{here}}, which I also enjoyed doing. On a more personal note, I read vociferously: my favorite books are Hofstadter's \emph{Godel, Escher, Bach}, Marquez' \emph{One Hundred Years of Solitude}), and Kundera's \emph{Farewell Waltz}. 
+
+
+I thrive on new challenges, and so think that I would be a strong fit as a ROLE at COMPANY. I would be grateful if you consider me by reviewing my resume and viewing my website at \href{https://owainwest.com}{\textbf{owainwest.com}}. I appreciate your time and consideration, and hope that we might speak soon. 
+\vspace*{0.3cm}
+
+
+
+%\vspace*{5mm}
+%Best regards,
+
+%Owain West
+\closing{Sincerely yours,\\
+\fromsig{\includegraphics[width=2.5cm, height=1cm]{signature.png}} \\
+\fromname{Owain West}
+}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\end{newlfm}
+%\includegraphics[width=2cm]{C:/signature.png}
+\end{document}
