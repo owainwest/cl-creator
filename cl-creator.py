@@ -1,6 +1,7 @@
 from subprocess import call
 import pathlib
 
+
 if __name__ == '__main__':
     template = input('CL template location: ')
     
