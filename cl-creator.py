@@ -1,10 +1,12 @@
 from subprocess import call
 import pathlib
 
+# your cover letter template should have
+# keywords ROLE, COMPANY to be replaced
 
 if __name__ == '__main__':
     template = input('CL template location: ')
-    
+
     while True:
         company = input('company: ')
         role = input('role: ')
